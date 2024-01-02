@@ -5,14 +5,31 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "Moviesdata",
+						"type": "DatasetReference"
+					},
 					"name": "GoogleCloudSource"
+				},
+				{
+					"name": "source1"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
+				"source(output(",
+				"          Prop_0 as string,",
+				"          id as string,",
+				"          original_title as string,",
+				"          overview as string,",
+				"          genre_ids as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> GoogleCloudSource",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> GoogleCloudSource"
+				"     validateSchema: false) ~> source1"
 			]
 		}
 	}

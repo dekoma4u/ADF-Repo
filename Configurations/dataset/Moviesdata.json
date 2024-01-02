@@ -1,0 +1,45 @@
+{
+	"name": "Moviesdata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "GoogleCloudStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "GoogleCloudStorageLocation",
+				"bucketName": "newbucketbyugoo",
+				"folderPath": "upload/movies",
+				"fileName": "MOIVES_DATA.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Prop_0",
+				"type": "String"
+			},
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "original_title",
+				"type": "String"
+			},
+			{
+				"name": "overview",
+				"type": "String"
+			},
+			{
+				"name": "genre_ids",
+				"type": "String"
+			}
+		]
+	}
+}
