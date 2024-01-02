@@ -9,10 +9,10 @@
 						"referenceName": "Moviesdata",
 						"type": "DatasetReference"
 					},
-					"name": "GoogleCloudSource"
+					"name": "Moviesdata"
 				},
 				{
-					"name": "source1"
+					"name": "genredata"
 				}
 			],
 			"sinks": [],
@@ -27,9 +27,9 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> GoogleCloudSource",
+				"     ignoreNoFilesFound: false) ~> Moviesdata",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1"
+				"     validateSchema: false) ~> genredata"
 			]
 		}
 	}
