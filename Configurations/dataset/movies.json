@@ -1,0 +1,20 @@
+{
+	"name": "movies",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "movies.parquet",
+				"container": "files"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"name": "moviesnow",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "MOIVES_DATA.csv",
+				"container": "files"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Prop_0",
+				"type": "String"
+			},
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "original_title",
+				"type": "String"
+			},
+			{
+				"name": "overview",
+				"type": "String"
+			},
+			{
+				"name": "genre_ids",
+				"type": "String"
+			}
+		]
+	}
+}

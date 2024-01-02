@@ -1,0 +1,19 @@
+{
+	"name": "genrenow",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "files"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

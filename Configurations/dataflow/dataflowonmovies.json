@@ -1,12 +1,12 @@
 {
-	"name": "dataflow1",
+	"name": "dataflowonmovies",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "Moviesdata",
+						"referenceName": "moviesnow",
 						"type": "DatasetReference"
 					},
 					"name": "Moviesdata"
@@ -19,7 +19,30 @@
 					"name": "genredata"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "moviesparquet",
+						"type": "DatasetReference"
+					},
+					"name": "sinkmovies",
+					"rejectedDataLinkedService": {
+						"referenceName": "AzureBlobStorage1",
+						"type": "LinkedServiceReference"
+					}
+				},
+				{
+					"dataset": {
+						"referenceName": "genrenow",
+						"type": "DatasetReference"
+					},
+					"name": "sinkgenre",
+					"rejectedDataLinkedService": {
+						"referenceName": "AzureBlobStorage1",
+						"type": "LinkedServiceReference"
+					}
+				}
+			],
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
@@ -39,7 +62,29 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> genredata"
+				"     ignoreNoFilesFound: false) ~> genredata",
+				"Moviesdata sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          Prop_0,",
+				"          id,",
+				"          original_title,",
+				"          overview,",
+				"          genre_ids",
+				"     )) ~> sinkmovies",
+				"genredata sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          Prop_0,",
+				"          id,",
+				"          name",
+				"     )) ~> sinkgenre"
 			]
 		}
 	}
