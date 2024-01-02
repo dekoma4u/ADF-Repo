@@ -24,7 +24,7 @@
 			"scriptLines": [
 				"source(output(",
 				"          Prop_0 as string,",
-				"          id as string,",
+				"          id as integer,",
 				"          original_title as string,",
 				"          overview as string,",
 				"          genre_ids as string",
@@ -34,7 +34,7 @@
 				"     ignoreNoFilesFound: false) ~> Moviesdata",
 				"source(output(",
 				"          Prop_0 as string,",
-				"          id as string,",
+				"          id as short,",
 				"          name as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
