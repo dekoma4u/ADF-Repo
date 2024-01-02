@@ -12,10 +12,6 @@
 					"name": "Moviesdata"
 				},
 				{
-					"dataset": {
-						"referenceName": "genre",
-						"type": "DatasetReference"
-					},
 					"name": "genredata"
 				}
 			],
@@ -61,8 +57,7 @@
 				"          name as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> genredata",
+				"     validateSchema: false) ~> genredata",
 				"Moviesdata sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
