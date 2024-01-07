@@ -1,0 +1,9 @@
+{
+	"name": "ulomafactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2ecb56aa-b82a-4864-9855-92bdff3a53b9",
+		"tenantId": "d51bc058-8e2c-4e57-9ca1-feba09c6842b"
+	}
+}
