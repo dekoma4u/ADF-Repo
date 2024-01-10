@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "4799976e-371c-4e76-8261-ccc43c7354fa"
+				"spark.autotune.trackingId": "065b0069-9dc0-473d-a853-736da820fd4f"
 			}
 		},
 		"metadata": {
@@ -61,7 +61,7 @@
 					"df = spark.read.load('abfss://files@ulomalakestorage.dfs.core.windows.net/part-00000-38e87d9e-c723-429d-9e8a-3ddb9199c548-c000.snappy.parquet', format='parquet')\r\n",
 					"display(df.limit(10))"
 				],
-				"execution_count": 2
+				"execution_count": 1
 			},
 			{
 				"cell_type": "code",
