@@ -1,5 +1,5 @@
 {
-	"name": "Notebook 2",
+	"name": "all_movies_flow",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "1",
 				"spark.dynamicAllocation.maxExecutors": "1",
-				"spark.autotune.trackingId": "ba4ebdb4-9012-472f-8f87-389bd8906fcc"
+				"spark.autotune.trackingId": "3136a4a3-bddc-49e9-853e-c4500e14a046"
 			}
 		},
 		"metadata": {
@@ -61,7 +61,144 @@
 					"df = spark.read.load('abfss://files@ulomalakestorage.dfs.core.windows.net/part-00000-38e87d9e-c723-429d-9e8a-3ddb9199c548-c000.snappy.parquet', format='parquet')\r\n",
 					"display(df.limit(10))"
 				],
-				"execution_count": 3
+				"execution_count": 15
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.read.load('abfss://files@ulomalakestorage.dfs.core.windows.net/*.parquet', format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"execution_count": 19
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"top_movies = df.select(\r\n",
+					"    \"id\", \"original_title\", \"overview\"\r\n",
+					")\r\n",
+					"top_movies.createOrReplaceTempView(\"top_movies\")\r\n",
+					"top_movies.show(100)"
+				],
+				"execution_count": 21
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"\r\n",
+					"CREATE or REPLACE TEMPORARY VIEW top_moviestemp\r\n",
+					"AS\r\n",
+					"    select * from top_movies"
+				],
+				"execution_count": 23
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"toptempmovies = sqlContext.table(\"top_moviestemp\")\r\n",
+					"toptempmovies.show(10)"
+				],
+				"execution_count": 25
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"tags": [
+						"parameters"
+					]
+				},
+				"source": [
+					"import uuid\r\n",
+					"\r\n",
+					"runid = uuid.uuid4()"
+				],
+				"execution_count": 26
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					}
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"toptempmovies.write.parquet('abfss://files@ulomalakestorage.dfs.core.windows.net/allmovies/' + str(runid) + '.parquet')"
+				],
+				"execution_count": 28
 			}
 		]
 	}
