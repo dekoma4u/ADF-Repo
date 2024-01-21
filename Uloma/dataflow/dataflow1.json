@@ -6,10 +6,10 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "gcloudmovies",
+						"referenceName": "googlecloudstorage",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "source2"
 				}
 			],
 			"sinks": [
@@ -36,8 +36,8 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 select(mapColumn(",
+				"     ignoreNoFilesFound: false) ~> source2",
+				"source2 select(mapColumn(",
 				"          id,",
 				"          original_title,",
 				"          overview,",
