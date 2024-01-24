@@ -1,0 +1,17 @@
+{
+	"name": "GoogleCloudStorage3",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "GoogleCloudStorage",
+		"typeProperties": {
+			"serviceUrl": "https://storage.googleapis.com",
+			"accessKeyId": "GOOG2OTNP7JS3NW6LGUQUEOH",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlNZTkFQU0VAODEyM0Q1MzgtODI2NC00QkU4LUIzOEQtMzJGQzEwQUZGMzYzXzQzNjBlODhhLWRhNWItNGZmNS1iZmM5LWEyY2NjYWFmMmUzOSINCn0="
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
