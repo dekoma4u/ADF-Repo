@@ -5,6 +5,9 @@
 		"workspaceName": {
 			"value": "ulomasynapse"
 		},
+		"GoogleCloudStorage3_secretAccessKey": {
+			"value": ""
+		},
 		"ulomasynapse-WorkspaceDefaultSqlServer_connectionString": {
 			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:ulomasynapse.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
@@ -13,6 +16,12 @@
 		},
 		"GoogleCloudStorage1_properties_typeProperties_accessKeyId": {
 			"value": "GOOGHCKCLCRCNI2YD5DYLNL3"
+		},
+		"GoogleCloudStorage2_properties_typeProperties_accessKeyId": {
+			"value": "GOOGHCKCLCRCNI2YD5DYLNL3"
+		},
+		"GoogleCloudStorage3_properties_typeProperties_accessKeyId": {
+			"value": "GOOG2OTNP7JS3NW6LGUQUEOH"
 		},
 		"ulomasynapse-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://ulomastorage.dfs.core.windows.net"
