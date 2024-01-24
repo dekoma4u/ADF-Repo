@@ -1,0 +1,19 @@
+{
+	"name": "movies_in_parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "ulomafiles"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
