@@ -1,0 +1,36 @@
+{
+	"name": "moviesParquetonsynapse",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ulomasynapse-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "ulomafiles"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "INT32"
+			},
+			{
+				"name": "original_title",
+				"type": "UTF8"
+			},
+			{
+				"name": "overview",
+				"type": "UTF8"
+			},
+			{
+				"name": "genre_ids",
+				"type": "UTF8"
+			}
+		]
+	}
+}
