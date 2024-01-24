@@ -5,17 +5,17 @@
 		"factoryName": {
 			"value": "ulomafactory"
 		},
-		"GoogleCloudStorage1_secretAccessKey": {
-			"value": ""
-		},
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
-		"GoogleCloudStorage1_properties_typeProperties_accessKeyId": {
-			"value": "GOOG66FJO536IFCSQVN4TMUO"
-		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"value": "https://ulomalakestorage.dfs.core.windows.net/"
+			"value": "https://ulomastorage.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://ulomavault.vault.azure.net/"
+		},
+		"GoogleCloudStorage1_properties_typeProperties_accessKeyId": {
+			"value": "GOOGHCKCLCRCNI2YD5DYLNL3"
 		},
 		"containerUri": {
 			"value": ""

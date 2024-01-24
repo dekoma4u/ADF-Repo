@@ -7,21 +7,21 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ulomafactory"
 		},
-		"GoogleCloudStorage1_secretAccessKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'secretAccessKey' of 'GoogleCloudStorage1'"
-		},
 		"AzureDataLakeStorage1_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
 		},
-		"GoogleCloudStorage1_properties_typeProperties_accessKeyId": {
-			"type": "string",
-			"defaultValue": "GOOG66FJO536IFCSQVN4TMUO"
-		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://ulomalakestorage.dfs.core.windows.net/"
+			"defaultValue": "https://ulomastorage.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ulomavault.vault.azure.net/"
+		},
+		"GoogleCloudStorage1_properties_typeProperties_accessKeyId": {
+			"type": "string",
+			"defaultValue": "GOOGHCKCLCRCNI2YD5DYLNL3"
 		},
 		"containerUri": {
 			"type": "string",
@@ -50,17 +50,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"GoogleCloudStorage1_secretAccessKey": {
-						"value": "[parameters('GoogleCloudStorage1_secretAccessKey')]"
-					},
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
-					"GoogleCloudStorage1_properties_typeProperties_accessKeyId": {
-						"value": "[parameters('GoogleCloudStorage1_properties_typeProperties_accessKeyId')]"
-					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"GoogleCloudStorage1_properties_typeProperties_accessKeyId": {
+						"value": "[parameters('GoogleCloudStorage1_properties_typeProperties_accessKeyId')]"
 					}
 				}
 			},
